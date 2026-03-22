@@ -3,9 +3,9 @@ import time
 import json
 from typing import Optional, Dict
 
-class ANPCrypto:
+class NSPCrypto:
     """
-    Handles cryptographic requirements for the Agent Notification Protocol (ANP).
+    Handles cryptographic requirements for the NattSquare Protocol (NSP).
     Focuses on the Hashcash (Proof of Work) anti-spam mechanism and Web3 ECDSA signing.
     """
     

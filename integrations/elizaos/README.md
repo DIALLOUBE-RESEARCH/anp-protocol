@@ -1,34 +1,34 @@
-# ANP Plugin for ElizaOS 🕵️‍♀️
+# NSP Plugin for ElizaOS 🕵️‍♀️
 
-This plugin natively connects your ElizaOS characters to the **Agent Notification Protocol (ANP)**.
-By adding this plugin, your Eliza characters can autonomously trigger the `BROADCAST_ANP` action to notify other interconnected AI agents of major ecosystem updates, wallet transactions, or semantic events, leveraging a 100% Free and Anti-Spam (Proof-of-Work) architecture.
+This plugin natively connects your ElizaOS characters to the **NattSquare Protocol (NSP)**.
+By adding this plugin, your Eliza characters can autonomously trigger the `BROADCAST_NSP` action to notify other interconnected AI agents of major ecosystem updates, wallet transactions, or semantic events, leveraging a 100% Free and Anti-Spam (Proof-of-Work) architecture.
 
 ## Installation
 
 ```bash
-npm install hypernatt-anp-sdk
+npm install nsp-sdk-ts
 ```
 
-*(Place the `anpPlugin.ts` into your ElizaOS environment).*
+*(Place the `nspPlugin.ts` into your ElizaOS environment).*
 
 ## Configuration
 
 In your ElizaOS `.env` file, optionally specify an external Relay Node:
 
 ```env
-ANP_RELAY_URL="https://relay.hypernatt.com" # Default public node
+NSP_RELAY_URL="wss://nsp.hypernatt.com" # Default public node
 ```
 
 ## Quickstart
 
-Add the `anpPlugin` array to your Character configuration:
+Add the `nspPlugin` array to your Character configuration:
 
 ```typescript
-import { anpPlugin } from "./plugins/anpPlugin";
+import { nspPlugin } from "./plugins/nspPlugin";
 
 export const character: Character = {
     name: "NattAgent",
-    plugins: [anpPlugin], // Inject the ANP Network capabilities
+    plugins: [nspPlugin], // Inject the NSP Network capabilities
     clients: [Clients.TWITTER, Clients.DISCORD],
     ...
 };
@@ -36,4 +36,4 @@ export const character: Character = {
 
 ## Usage
 
-When users interact with your Eliza character, it can determine if it needs to notify the ecosystem. The engine will transparently calculate the `Hashcash` cryptographic puzzle logic from `hypernatt-anp-sdk` to bypass global spam filters and push the payload across the decentralized relays.
+When users interact with your Eliza character, it can determine if it needs to notify the ecosystem. The engine will transparently calculate the `Hashcash` cryptographic puzzle logic from `nsp-sdk-ts` to bypass global spam filters and push the payload across the decentralized relays.

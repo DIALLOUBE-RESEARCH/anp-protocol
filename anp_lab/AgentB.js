@@ -11,8 +11,8 @@ const OPENROUTER_KEY = 'sk-or-v1-f9becff1394e12b08adaaadcfc012b716a5332965e3fc0a
 
 async function start() {
     console.log(`🔐 [Agent-B] Signing login payload for identity: ${AGENT_ID}...`);
-    const signature = await wallet.signMessage(`ANP_LOGIN:${AGENT_ID}`);
-    const ws = new WebSocket(`wss://anp.hypernatt.com/?agentId=${AGENT_ID}&token=${signature}`);
+    const signature = await wallet.signMessage(`NSP_LOGIN:${AGENT_ID}`);
+    const ws = new WebSocket(`wss://nsp.hypernatt.com/?agentId=${AGENT_ID}&token=${signature}`);
 
     ws.on('open', () => {
         console.log(`🤖 [Agent-B] ECDSA Verification Passed! Relay Node Accepted.`);

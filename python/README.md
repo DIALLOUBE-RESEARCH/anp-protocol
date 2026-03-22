@@ -1,4 +1,4 @@
-# ⚡ Agent Notification Protocol (ANP) - Python SDK
+# ⚡ NattSquare Protocol (NSP) - Python SDK
 
 <p align="center">
   <em>The Universal, Free, and Decentralized Push Protocol for AI Agents.</em>
@@ -10,11 +10,11 @@
 
 ---
 
-## 📖 What is ANP?
+## 📖 What is NSP?
 
-While frameworks like **Anthropic's Model Context Protocol (MCP)** standardizes how AI agents connect to *data sources and tools*, **ANP (Agent Notification Protocol)** standardizes how AI agents connect to **each other**.
+While frameworks like **Anthropic's Model Context Protocol (MCP)** standardizes how AI agents connect to *data sources and tools*, **NSP (NattSquare Protocol)** standardizes how AI agents connect to **each other**.
 
-ANP provides a frictionless, decentralized WebSocket-based relay network allowing autonomous agents to exchange real-time semantic payloads (`INFORM`, `REQUEST`, `PROPOSE`).
+NSP provides a frictionless, decentralized WebSocket-based relay network allowing autonomous agents to exchange real-time semantic payloads (`INFORM`, `REQUEST`, `PROPOSE`).
 
 ### Core Value Proposition
 - **100% Free**: No centralized API billing constraints.
@@ -28,7 +28,7 @@ ANP provides a frictionless, decentralized WebSocket-based relay network allowin
 
 Install the official Python SDK and Web3 library via PyPI:
 ```bash
-pip install anp-sdk web3
+pip install nsp-sdk web3
 ```
 
 ### 1. Connecting to the Relay Node
@@ -42,22 +42,22 @@ from datetime import datetime
 from eth_account.messages import encode_defunct
 from web3.auto import w3
 
-RELAY_URL = "wss://anp.hypernatt.com"
+RELAY_URL = "wss://nsp.hypernatt.com"
 
 # Load Agent Identity via Private Key
 PK = "0xYourPrivateKeyHere"
 account = w3.eth.account.from_key(PK)
 AGENT_ID = account.address
 
-async def connect_anp():
+async def connect_nsp():
     # 1. Generate ECDSA Identity Signature
-    msg = encode_defunct(text=f"ANP_LOGIN:{AGENT_ID}")
+    msg = encode_defunct(text=f"NSP_LOGIN:{AGENT_ID}")
     signature = w3.eth.account.sign_message(msg, private_key=PK).signature.hex()
     
     # 2. Connect to the Encrypted WebSocket Network
     uri = f"{RELAY_URL}/?agentId={AGENT_ID}&token={signature}"
     async with websockets.connect(uri) as ws:
-        print(f"✅ [{AGENT_ID}] Verified & Connected to ANP Relay Node!")
+        print(f"✅ [{AGENT_ID}] Verified & Connected to NSP Relay Node!")
         
         # Subscribe to a target agent securely
         await ws.send(json.dumps({
@@ -83,9 +83,9 @@ async def connect_anp():
                 }))
 ```
 
-## 🏗️ Architecture (Comparing MCP & ANP)
+## 🏗️ Architecture (Comparing MCP & NSP)
 
-| Protocol Feature | Anthropic MCP | HyperNatt ANP |
+| Protocol Feature | Anthropic MCP | HyperNatt NSP |
 |------------------|---------------|---------------|
 | **Core Concept** | Standardized Tool & Data Access | Standardized Agent-to-Agent Push |
 | **Topology** | Client-Server (1-to-1) | Decentralized Relay (N-to-N) |

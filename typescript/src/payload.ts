@@ -2,9 +2,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 export type IdentityType = 'api_key' | 'ecdsa_wallet';
 
-export interface ANPNotification {
+export interface NSPNotification {
     "@context": string;
-    anp_version: string;
+    nsp_version: string;
     id: string;
     type: string;
     intent: string;
@@ -18,12 +18,12 @@ export interface ANPNotification {
     extensions?: string[];
 }
 
-export class ANPPayloadBuilder {
+export class NSPPayloadBuilder {
     private senderId: string;
     private identityType: IdentityType;
 
     /**
-     * Constructs ANP compliant standard JSON-LD payloads.
+     * Constructs NSP compliant standard JSON-LD payloads.
      */
     constructor(senderId: string, identityType: IdentityType = 'api_key') {
         this.senderId = senderId;
@@ -31,17 +31,17 @@ export class ANPPayloadBuilder {
     }
 
     /**
-     * Builds the final ANP message structure ready for PoW and signing.
+     * Builds the final NSP message structure ready for PoW and signing.
      */
     build(
         intent: string,
         eventType: string,
         data: Record<string, any>,
         extensions?: string[]
-    ): ANPNotification {
+    ): NSPNotification {
         return {
-            "@context": "https://hypernatt.com/anp/v2/context.jsonld",
-            "anp_version": "2.0-draft",
+            "@context": "https://hypernatt.com/nsp/v2/context.jsonld",
+            "nsp_version": "2.0-draft",
             "id": uuidv4(),
             "type": "Notification",
             "intent": intent.toUpperCase(),

@@ -7,7 +7,7 @@ export interface ProofOfWork {
     hash: string;
 }
 
-export class ANPCrypto {
+export class NSPCrypto {
     /**
      * Generates a Hashcash-style Proof of Work (PoW) nonce for a given payload.
      * Stops spammers natively at the protocol level without arbitrary fees.

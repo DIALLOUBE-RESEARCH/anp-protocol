@@ -1,7 +1,7 @@
 {
-  "name": "hypernatt-anp-sdk",
+  "name": "nsp-sdk-ts",
   "version": "0.2.2",
-  "description": "Official TypeScript SDK for the Agent Notification Protocol (ANP) - The universal, anti-spam push protocol for AI Agents.",
+  "description": "Official TypeScript SDK for the NattSquare Protocol (NSP) - The universal, anti-spam push protocol for AI Agents.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,24 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts.git"
+    "url": "git+https://github.com/DIALLOUBE-RESEARCH/nsp-protocol.git"
   },
   "keywords": [
     "ai",
     "agents",
     "protocol",
     "push",
-    "anp",
+    "nsp",
     "web3",
-    "sse",
+    "wss",
     "hashcash"
   ],
   "author": "Hamet Diallo - HyperNatt <contact@hypernatt.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts/issues"
+    "url": "https://github.com/DIALLOUBE-RESEARCH/nsp-protocol/issues"
   },
-  "homepage": "https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts#readme",
+  "homepage": "https://github.com/DIALLOUBE-RESEARCH/nsp-protocol#readme",
   "dependencies": {
     "axios": "^1.6.0",
     "eventsource": "^2.0.2",

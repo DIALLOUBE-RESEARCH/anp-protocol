@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name='anp-sdk',
+    name='nsp-sdk',
     version='0.2.2',
-    description='Official Python SDK for the Agent Notification Protocol (ANP) - The universal push protocol for AI Agents.',
+    description='Official Python SDK for the NattSquare Protocol (NSP) - The universal push protocol for AI Agents.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='HyperNatt / DIALLOUBE-RESEARCH',
     author_email='contact@hypernatt.com',
-    url='https://github.com/DIALLOUBE-RESEARCH/anp-sdk',
+    url='https://github.com/DIALLOUBE-RESEARCH/nsp-protocol',
     packages=find_packages(),
     install_requires=[
         'requests>=2.25.1',

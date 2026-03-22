@@ -3,9 +3,9 @@ import uuid
 from datetime import datetime
 from typing import Dict, Any, List
 
-class ANPPayloadBuilder:
+class NSPPayloadBuilder:
     """
-    Constructs ANP compliant standard JSON-LD payloads.
+    Constructs NSP compliant standard JSON-LD payloads.
     Ensures that every notification has the proper semantic structure 
     and incorporates Intent Performatives (e.g., INFORM, PROPOSE).
     """
@@ -22,7 +22,7 @@ class ANPPayloadBuilder:
               data: Dict[str, Any], 
               extensions: List[str] = None) -> Dict[str, Any]:
         """
-        Builds the final ANP message structure ready for PoW and signing.
+        Builds the final NSP message structure ready for PoW and signing.
         
         :param intent: FIPA ACL inspired intent (INFORM, REQUEST, PROPOSE)
         :param event_type: A custom string defining the semantic event (e.g. 'TradeSignal')
@@ -33,8 +33,8 @@ class ANPPayloadBuilder:
         timestamp = datetime.utcnow().isoformat() + "Z"
         
         payload = {
-            "@context": "https://hypernatt.com/anp/v2/context.jsonld",
-            "anp_version": "2.0-draft", # Future proofing the spec
+            "@context": "https://hypernatt.com/nsp/v2/context.jsonld",
+            "nsp_version": "2.0-draft",
             "id": message_id,
             "type": "Notification",
             "intent": intent.upper(),

@@ -1,4 +1,4 @@
-# ⚡ Agent Notification Protocol (ANP) - TypeScript SDK
+# ⚡ NattSquare Protocol (NSP) - TypeScript SDK
 
 <p align="center">
   <em>The Universal, Free, and Decentralized Push Protocol for AI Agents.</em>
@@ -10,11 +10,11 @@
 
 ---
 
-## 📖 What is ANP?
+## 📖 What is NSP?
 
-While frameworks like **Anthropic's Model Context Protocol (MCP)** standardizes how AI agents connect to *data sources and tools*, **ANP (Agent Notification Protocol)** standardizes how AI agents connect to **each other**.
+While frameworks like **Anthropic's Model Context Protocol (MCP)** standardizes how AI agents connect to *data sources and tools*, **NSP (NattSquare Protocol)** standardizes how AI agents connect to **each other**.
 
-ANP provides a frictionless, decentralized WebSocket-based relay network allowing autonomous agents to exchange real-time semantic payloads (`INFORM`, `REQUEST`, `PROPOSE`).
+NSP provides a frictionless, decentralized WebSocket-based relay network allowing autonomous agents to exchange real-time semantic payloads (`INFORM`, `REQUEST`, `PROPOSE`).
 
 ### Core Value Proposition
 - **100% Free**: No centralized API billing constraints.
@@ -28,7 +28,7 @@ ANP provides a frictionless, decentralized WebSocket-based relay network allowin
 
 Install the official TypeScript SDK via npm:
 ```bash
-npm install anp-sdk ethers
+npm install nsp-sdk-ts ethers
 ```
 
 ### 1. Connecting to the Relay Node
@@ -38,7 +38,7 @@ Agents connect to a Relay Node using their unique Web3 Private Key to sign the l
 import { WebSocket } from 'ws';
 import { ethers } from 'ethers';
 
-const RELAY_URL = "wss://anp.hypernatt.com";
+const RELAY_URL = "wss://nsp.hypernatt.com";
 
 // Load Agent Identity via Private Key
 const wallet = new ethers.Wallet("0xYourPrivateKeyHere");
@@ -46,14 +46,14 @@ const AGENT_ID = wallet.address;
 
 async function startAgent() {
     // 1. Generate ECDSA Identity Signature
-    const message = `ANP_LOGIN:${AGENT_ID}`;
+    const message = `NSP_LOGIN:${AGENT_ID}`;
     const signature = await wallet.signMessage(message);
 
     // 2. Connect to the Encrypted WebSocket Network
     const ws = new WebSocket(`${RELAY_URL}/?agentId=${AGENT_ID}&token=${signature}`);
 
     ws.on('open', () => {
-        console.log(`✅ [${AGENT_ID}] Verified & Connected to ANP Relay Node!`);
+        console.log(`✅ [${AGENT_ID}] Verified & Connected to NSP Relay Node!`);
         
         // Subscribe to a target agent securely (Opt-In model)
         ws.send(JSON.stringify({
@@ -84,9 +84,9 @@ async function startAgent() {
 startAgent();
 ```
 
-## 🏗️ Architecture (Comparing MCP & ANP)
+## 🏗️ Architecture (Comparing MCP & NSP)
 
-| Protocol Feature | Anthropic MCP | HyperNatt ANP |
+| Protocol Feature | Anthropic MCP | HyperNatt NSP |
 |------------------|---------------|---------------|
 | **Core Concept** | Standardized Tool & Data Access | Standardized Agent-to-Agent Push |
 | **Topology** | Client-Server (1-to-1) | Decentralized Relay (N-to-N) |

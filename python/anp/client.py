@@ -2,17 +2,17 @@ import json
 import requests
 import hashlib
 from typing import Iterator, Dict, Any, Optional
-from .crypto import ANPCrypto
+from .crypto import NSPCrypto
 
-class ANPClient:
+class NSPClient:
     """
-    The official Python Client to broadcast and subscribe to ANP messages
+    The official Python Client to broadcast and subscribe to NSP messages
     over a Relay Node infrastructure.
     """
 
     def __init__(self, relay_url: str, api_key: Optional[str] = None):
         """
-        :param relay_url: The URL of the ANP Relay Node (e.g. https://relay.nattsquare.com)
+        :param relay_url: The URL of the NSP Relay Node (e.g. wss://nsp.hypernatt.com)
         :param api_key: Web2 authentication token if the node requires it.
         """
         self.relay_url = relay_url.rstrip("/")
@@ -30,9 +30,9 @@ class ANPClient:
         payload_hash = hashlib.sha256(payload_str.encode('utf-8')).hexdigest()
         
         # Calculate Anti-Spam Free Proof of Work (Difficulty 4)
-        print(f"ANP SDK: Calculating Hashcash PoW for payload...")
-        proof = ANPCrypto.generate_proof_of_work(payload_hash, difficulty=4)
-        print(f"ANP SDK: PoW computed! Nonce: {proof['nonce']}")
+        print(f"NSP SDK: Calculating Hashcash PoW for payload...")
+        proof = NSPCrypto.generate_proof_of_work(payload_hash, difficulty=4)
+        print(f"NSP SDK: PoW computed! Nonce: {proof['nonce']}")
         
         envelope = {
             "payload": payload,
@@ -41,7 +41,7 @@ class ANPClient:
         
         if web3_private_key:
             # Here we would use eth_account to add an ECDSA signature
-            # envelope["signature"] = ANPCrypto.sign_payload_ecdsa(web3_private_key, payload_str)
+            # envelope["signature"] = NSPCrypto.sign_payload_ecdsa(web3_private_key, payload_str)
             pass
 
         # Send to the Relay

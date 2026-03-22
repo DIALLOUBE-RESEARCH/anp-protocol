@@ -1,5 +1,5 @@
 {
-  "name": "anp-lab-crash-test",
+  "name": "nsp-lab-crash-test",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {

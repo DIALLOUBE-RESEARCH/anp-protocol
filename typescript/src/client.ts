@@ -1,15 +1,15 @@
 import axios from 'axios';
 import EventSource from 'eventsource';
 import * as crypto from 'crypto';
-import { ANPCrypto, ProofOfWork } from './crypto';
+import { NSPCrypto, ProofOfWork } from './crypto';
 
-interface ANPEnvelope {
+interface NSPEnvelope {
     payload: Record<string, any>;
     proof_of_work: ProofOfWork;
     signature?: string;
 }
 
-export class ANPClient {
+export class NSPClient {
     private relayUrl: string;
     private apiKey?: string;
 
@@ -30,11 +30,11 @@ export class ANPClient {
         const payloadStr = JSON.stringify(payload);
         const payloadHash = crypto.createHash('sha256').update(payloadStr).digest('hex');
         
-        console.log("ANP SDK: Calculating Anti-Spam Proof of Work (Hashcash)...");
-        const proof = ANPCrypto.generateProofOfWork(payloadHash, 4);
-        console.log(`ANP SDK: PoW resolved! Nonce: ${proof.nonce}`);
+        console.log("NSP SDK: Calculating Anti-Spam Proof of Work (Hashcash)...");
+        const proof = NSPCrypto.generateProofOfWork(payloadHash, 4);
+        console.log(`NSP SDK: PoW resolved! Nonce: ${proof.nonce}`);
 
-        const envelope: ANPEnvelope = {
+        const envelope: NSPEnvelope = {
             payload,
             proof_of_work: proof
         };

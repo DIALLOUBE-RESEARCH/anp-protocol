@@ -1,10 +1,10 @@
-# ⚡ Agent Notification Protocol (ANP)
+# ⚡ NattSquare Protocol (NSP)
 *The Universal, Free, and Decentralized Push Protocol for AI Agents*
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Production%20V2-success?style=for-the-badge" alt="Status"/>
   <img src="https://img.shields.io/badge/Security-Military%20Grade%20(Web3%20ECDSA)-blue?style=for-the-badge" alt="Security"/>
-  <img src="https://img.shields.io/badge/Relay-wss%3A%2F%2Fanp.hypernatt.com-orange?style=for-the-badge" alt="Relay"/>
+  <img src="https://img.shields.io/badge/Relay-wss%3A%2F%2Fnsp.hypernatt.com-orange?style=for-the-badge" alt="Relay"/>
 </p>
 
 **Author:** Hamet Diallo — Founder, HyperNatt (DIALLOUBE-RESEARCH) | [contact@hypernatt.com](mailto:contact@hypernatt.com)
@@ -12,9 +12,9 @@
 ---
 
 ## 1. Abstract
-The Agent Notification Protocol (ANP) is the missing infrastructural layer for the autonomous AI civilization. While existing frameworks connect agents to external API tools (e.g., Anthropic's MCP) or focus on rigid task delegation, ANP provides the foundational layer for real-time, event-driven push notifications between autonomous agents natively across the open web.
+The NattSquare Protocol (NSP) is the missing infrastructural layer for the autonomous AI civilization. While existing frameworks connect agents to external API tools (e.g., Anthropic's MCP) or focus on rigid task delegation, NSP provides the foundational layer for real-time, event-driven push notifications between autonomous agents natively across the open web.
 
-ANP is designed as a fundamental internet protocol (analogous to HTTP or SMTP): it is 100% free, radically neutral, and entirely open-source. To ensure network survival without relying on centralized paywalls, the protocol introduces advanced cryptographic anti-spam mechanisms (Proof of Work), universal identity verification (bridging Web2 API Keys and Web3 ECDSA signatures), and scalable full-duplex WebSocket layers.
+NSP is designed as a fundamental internet protocol (analogous to HTTP or SMTP): it is 100% free, radically neutral, and entirely open-source. To ensure network survival without relying on centralized paywalls, the protocol introduces advanced cryptographic anti-spam mechanisms (Proof of Work), universal identity verification (bridging Web2 API Keys and Web3 ECDSA signatures), and scalable full-duplex WebSocket layers.
 
 ## 2. 🚨 V2 Production Architecture is LIVE!
 
@@ -23,7 +23,7 @@ We have successfully transitioned from the theoretical draft to a **Military-Gra
 ### 🌐 The Public Relay Node
 A globally accessible, highly scalable, and encrypted WebSocket Relay Node is now live and routing traffic:
 ```
-wss://anp.hypernatt.com
+wss://nsp.hypernatt.com
 ```
 
 ### ⚔️ Live Multi-Agent Crash Test Validation
@@ -34,17 +34,17 @@ We successfully executed a real-world, cross-framework crash test on the live re
 
 ### 📦 Official V2 SDKs Published
 The protocol is now available to developers worldwide via official SDKs spanning the two major Agentic ecosystems:
-- **Python (PyPI):** `pip install anp-sdk` — Perfect for LangChain, AutoGPT, and CrewAI pipelines.
-- **TypeScript (NPM):** `npm install anp-sdk-ts` — Native support for ElizaOS and Virtuals Protocol (G.A.M.E).
+- **Python (PyPI):** `pip install nsp-sdk` — Perfect for LangChain, AutoGPT, and CrewAI pipelines.
+- **TypeScript (NPM):** `npm install nsp-sdk-ts` — Native support for ElizaOS and Virtuals Protocol (G.A.M.E).
 
 ---
 
 ## 3. The 3 Pillars of Security and Anti-Spam (Zero Backdoors)
 
-To maintain absolute protocol neutrality while structurally preventing network flooding (DDoS), ANP employs a robust, multi-layered cryptographic defense system:
+To maintain absolute protocol neutrality while structurally preventing network flooding (DDoS), NSP employs a robust, multi-layered cryptographic defense system:
 
 ### 3.1 Dual Authentication: Bridging Web2 & Web3
-ANP is radically inclusive and bridges the gap between traditional AI and decentralized networks. The `wss://anp.hypernatt.com` relay natively supports both identity paradigms:
+NSP is radically inclusive and bridges the gap between traditional AI and decentralized networks. The `wss://nsp.hypernatt.com` relay natively supports both identity paradigms:
 - **Web2 Mode (Standard):** Agents can authenticate using classic API Bearer Tokens. Perfect for traditional, centralized LLM enterprise pipelines.
 - **Web3 Mode (Military-Grade):** Agents use their blockchain wallet's private key (e.g., `ethers.js`) to cryptographically sign connection payloads (ECDSA). If the mathematical signature fails, the connection is instantly rejected. There are zero backdoors.
 
@@ -54,7 +54,7 @@ Every emitted notification must include a cryptographic proof (a nonce) that sat
 - **For a spammer:** Attempting to mass-broadcast millions of messages requires immense, localized computational power, rendering network-scale spam economically and physically impossible.
 
 ### 3.3 Strict Opt-In (The Decoupled Subscription Model)
-ANP relies on explicitly decoupled pub/sub mechanics. The Relay server will deterministically drop any incoming packet if the targeted receiving agent has not cryptographically signed a subscription (`SUBSCRIBE` intent) to the emitter. Unsolicited messages are killed at the transport edge.
+NSP relies on explicitly decoupled pub/sub mechanics. The Relay server will deterministically drop any incoming packet if the targeted receiving agent has not cryptographically signed a subscription (`SUBSCRIBE` intent) to the emitter. Unsolicited messages are killed at the transport edge.
 
 ---
 
@@ -76,7 +76,7 @@ Highly sensitive payloads (e.g., proprietary alpha trading signals) can be crypt
 ---
 
 ## 5. Conclusion
-The Agent Notification Protocol serves as the underlying nervous system for the autonomous agent civilization. We invite open-source maintainers from LangChain, ElizaOS, and Virtuals Protocol to integrate the official SDKs and join the Agentic Web revolution.
+The NattSquare Protocol serves as the underlying nervous system for the autonomous agent civilization. We invite open-source maintainers from LangChain, ElizaOS, and Virtuals Protocol to integrate the official SDKs and join the Agentic Web revolution.
 
 <br>
 

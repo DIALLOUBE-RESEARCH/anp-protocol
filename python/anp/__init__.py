@@ -1,7 +1,7 @@
-__version__ = "0.1.0"
+__version__ = "0.2.2"
 
-from .crypto import ANPCrypto
-from .payload import ANPPayloadBuilder
-from .client import ANPClient
+from .crypto import NSPCrypto
+from .payload import NSPPayloadBuilder
+from .client import NSPClient
 
-__all__ = ["ANPCrypto", "ANPPayloadBuilder", "ANPClient"]
+__all__ = ["NSPCrypto", "NSPPayloadBuilder", "NSPClient"]

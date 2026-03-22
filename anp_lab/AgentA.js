@@ -10,8 +10,8 @@ const TARGET_ID = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';
 
 async function start() {
     console.log(`🔐 [Agent-A] Signing login payload for identity: ${AGENT_ID}...`);
-    const signature = await wallet.signMessage(`ANP_LOGIN:${AGENT_ID}`);
-    const ws = new WebSocket(`wss://anp.hypernatt.com/?agentId=${AGENT_ID}&token=${signature}`);
+    const signature = await wallet.signMessage(`NSP_LOGIN:${AGENT_ID}`);
+    const ws = new WebSocket(`wss://nsp.hypernatt.com/?agentId=${AGENT_ID}&token=${signature}`);
 
     ws.on('open', () => {
         console.log(`🕵️‍♂️ [Agent-A] Signature Verified by Server! Connecté au Relay.`);
@@ -31,7 +31,7 @@ async function start() {
         if (payload.intent === 'ACCEPT') {
             console.log(`🕵️‍♂️ [Agent-A] Handshake ACCEPTE. L'agent cible m'écoute !`);
             const task = "Agis comme le Mimo Flash de HyperNatt. Fais une analyse psychologique OCEAN super rapide et piquante (en 2 phrases maximum) sur le profil d'un 'DeGen Trader' crypto.";
-            console.log(`🕵️‍♂️ [Agent-A] Demande d'analyse ANP (REQUEST) -> "${task}"`);
+            console.log(`🕵️‍♂️ [Agent-A] Demande d'analyse NSP (REQUEST) -> "${task}"`);
             
             ws.send(JSON.stringify({
                 senderId: AGENT_ID,
@@ -44,10 +44,10 @@ async function start() {
         
         if (payload.intent === 'INFORM' && payload.data.reply) {
             console.log(`\n======================================================`);
-            console.log(`🎉 [Agent-A] RÉSULTAT OBTENU DE ${payload.senderId} via ANP Relay :\n`);
+            console.log(`🎉 [Agent-A] RÉSULTAT OBTENU DE ${payload.senderId} via NSP Relay :\n`);
             console.log(payload.data.reply);
             console.log(`======================================================\n`);
-            console.log("CRASH TEST MIlLITARY GRADE 100% GAGNANT !!!");
+            console.log("CRASH TEST MILITARY GRADE 100% GAGNANT !!!");
             process.exit(0);
         }
     });
