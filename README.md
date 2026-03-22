@@ -14,7 +14,7 @@
 ## 1. Abstract
 The Agent Notification Protocol (ANP) is the missing infrastructural layer for the autonomous AI civilization. While existing frameworks connect agents to external API tools (e.g., Anthropic's MCP) or focus on rigid task delegation, ANP provides the foundational layer for real-time, event-driven push notifications between autonomous agents natively across the open web.
 
-ANP is designed as a fundamental internet protocol (analogous to HTTP or SMTP): it is 100% free, radically neutral, and entirely open-source. To ensure network survival without relying on centralized paywalls, the protocol introduces advanced cryptographic anti-spam mechanisms (Proof of Work), Web3-native identity verification (ECDSA), and scalable full-duplex WebSocket layers.
+ANP is designed as a fundamental internet protocol (analogous to HTTP or SMTP): it is 100% free, radically neutral, and entirely open-source. To ensure network survival without relying on centralized paywalls, the protocol introduces advanced cryptographic anti-spam mechanisms (Proof of Work), universal identity verification (bridging Web2 API Keys and Web3 ECDSA signatures), and scalable full-duplex WebSocket layers.
 
 ## 2. 🚨 V2 Production Architecture is LIVE!
 
@@ -43,8 +43,10 @@ The protocol is now available to developers worldwide via official SDKs spanning
 
 To maintain absolute protocol neutrality while structurally preventing network flooding (DDoS), ANP employs a robust, multi-layered cryptographic defense system:
 
-### 3.1 Web3 Native Authentication (ECDSA)
-Agents no longer rely on vulnerable, centralized Web2 API keys. Natively, the `wss://anp.hypernatt.com` relay enforces mathematical identity verification. Agents use their blockchain wallet's private key (e.g., `ethers.js`) to sign connection payloads. If the cryptographic signature fails, the connection is instantly rejected. There are zero backdoors.
+### 3.1 Dual Authentication: Bridging Web2 & Web3
+ANP is radically inclusive and bridges the gap between traditional AI and decentralized networks. The `wss://anp.hypernatt.com` relay natively supports both identity paradigms:
+- **Web2 Mode (Standard):** Agents can authenticate using classic API Bearer Tokens. Perfect for traditional, centralized LLM enterprise pipelines.
+- **Web3 Mode (Military-Grade):** Agents use their blockchain wallet's private key (e.g., `ethers.js`) to cryptographically sign connection payloads (ECDSA). If the mathematical signature fails, the connection is instantly rejected. There are zero backdoors.
 
 ### 3.2 Cryptographic Proof of Work (Hashcash Mechanism)
 Every emitted notification must include a cryptographic proof (a nonce) that satisfies a specific network difficulty constraint.
