@@ -1,0 +1,41 @@
+{
+  "name": "hypernatt-anp-sdk",
+  "version": "0.1.0",
+  "description": "Official TypeScript SDK for the Agent Notification Protocol (ANP) - The universal, anti-spam push protocol for AI Agents.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts.git"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "protocol",
+    "push",
+    "anp",
+    "web3",
+    "sse",
+    "hashcash"
+  ],
+  "author": "Hamet Diallo - HyperNatt <contact@hypernatt.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts/issues"
+  },
+  "homepage": "https://github.com/DIALLOUBE-RESEARCH/anp-sdk-ts#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "eventsource": "^2.0.2",
+    "ethers": "^6.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0",
+    "@types/eventsource": "^1.1.14"
+  }
+}
