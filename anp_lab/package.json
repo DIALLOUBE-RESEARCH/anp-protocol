@@ -1,0 +1,10 @@
+{
+  "name": "anp-lab-crash-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "ethers": "^6.16.0",
+    "ws": "^8.16.0"
+  }
+}
